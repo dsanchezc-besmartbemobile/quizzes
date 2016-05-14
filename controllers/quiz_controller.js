@@ -42,6 +42,8 @@ exports.create = function(req,res,next){
 		for(var a in error.errors){
 			req.flash('error',error.errors[a].value);
 		};
+
+		res.render('quizzes/new', {quiz:quiz});
 	}).catch(function(error){
 		req.flash('error','Error al crear un Quiz: '+error.message);
 		next(error);
