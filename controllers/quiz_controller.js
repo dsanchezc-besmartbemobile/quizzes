@@ -40,7 +40,7 @@ exports.create = function(req,res,next){
 	}).catch(Sequelize.ValidationError, function(error){
 		req.flash('error', 'Errores en el formulario:');
 		for(var a in error.errors){
-			req.flash('error',error.errors[i].value);
+			req.flash('error',error.errors[a].value);
 		};
 	}).catch(function(error){
 		req.flash('error','Error al crear un Quiz: '+error.message);
