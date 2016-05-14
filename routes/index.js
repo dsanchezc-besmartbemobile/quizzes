@@ -8,6 +8,8 @@ router.get('/', function(req, res, next) {
   res.render('index');
 });
 
+router.param('quizId', quizController.load);
+
 
 // Definición de rutas de /quizzes
 router.get('/quizzes',                     quizController.index);
