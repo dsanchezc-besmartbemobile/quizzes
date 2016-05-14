@@ -38,13 +38,12 @@ exports.create = function(req,res,next){
 	quiz.save({fields: ["question", "answer"]}).then(function(quiz){
 		req.flash('success','Quiz creado con exito');
 		res.redirect('/quizzes')
-	})
+	}).catch(sequelize.ValidationError, function(error){
 		req.flash('error', 'Errores en el formulario:');
 		for(var a in error.errors){
 			req.flash('error',error.errors[i].value);
 		};
-	})
-	.catch(function(error){
+	}).catch(function(error){
 		req.flash('error','Error al crear un Quiz: '+error.message);
 		next(error);
 	});
