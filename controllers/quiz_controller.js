@@ -3,7 +3,7 @@ var models = require('../models');
 
 
 exports.index = function(req,res,next){
-	models.Quiz.finAll().then(function(quizzes){
+	models.Quiz.findAll().then(function(quizzes){
 		res.render('quizzes/index.ejs',{quizzes:quizzes});
 	}).catch(function(error){next(error)});
 };
