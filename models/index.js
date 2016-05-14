@@ -7,6 +7,8 @@ var Sequelize = require('sequelize');
 // Usar BBDD SQLite:
 //    DATABASE_URL = sqlite:///
 //    DATABASE_STORAGE = quiz.sqlite
+// Usar BBDD Postgres:
+//    DATABASE_URL = postgres://user:passwd@host:port/database
 
 var url, storage;
 
@@ -34,8 +36,9 @@ sequelize.sync()
         return Quiz.count()
                 .then(function (c) {
                     if (c === 0) {   // la tabla se inicializa solo si está vacía
-                        return Quiz.bulkCreate([{ question: 'Capital de Italia',answer: 'Roma'},
-                            { question: 'Capital de Portugal',answer: 'Lisboa'}])
+                        return Quiz.bulkCreate([ {question: 'Capital de Italia',   answer: 'Roma'},
+                                                 {question: 'Capital de Portugal', answer: 'Lisboa'}
+                                              ])
                                    .then(function() {
                                         console.log('Base de datos inicializada con datos');
                                     });
