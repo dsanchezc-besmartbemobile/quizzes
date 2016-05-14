@@ -10,8 +10,7 @@ exports.index = function(req,res,next){
 
 // GET /question
 exports.show = function(req, res, next) {
-	models.Quiz.
-	.findById(req.params.quizId)
+	models.Quiz.findById(req.params.quizId)
 	.then(function(quiz){
 		if(quiz){
 			var answer = req.query.answer  || '';
