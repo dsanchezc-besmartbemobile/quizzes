@@ -15,6 +15,9 @@ body                 { font: 16px Georgia, serif;
                         background: #eee;
                       }
 
+                   .flashinfo{ background: #F00 
+                   		color: #FFF;}
+
 a                    { color: #00B7FF; }
 
 
