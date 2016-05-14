@@ -39,7 +39,6 @@ exports.create = function(req,res,next){
 		req.flash('success','Quiz creado con exito');
 		res.redirect('/quizzes')
 	})
-	.catch(Sequelize.ValidationError, function(error){
 		req.flash('error', 'Errores en el formulario:');
 		for(var a in error.errors){
 			req.flash('error',error.errors[i].value);
