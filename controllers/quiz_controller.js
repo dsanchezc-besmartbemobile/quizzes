@@ -1,6 +1,6 @@
 
 exports.question=function(req,res,nest){
-	res.render('quizzes/question', {question: 'Capital de Italia'});
+	res.render('quizzes/question', {question: 'Cual es la capital de Italia'});
 };
 
 exports.check = function(req,res,next) {
