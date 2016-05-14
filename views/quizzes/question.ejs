@@ -1,16 +1,6 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <title><Quiz</title>
-    <link rel='stylesheet' href='/stylesheets/style.css' />
-  </head>
-  <body>
-   <h2> Quiz: el juego de las preguntas </h2>
-   <form method="get" action="/check">
-   	<p>Pregunta: <%= question %> </p>
-   	<input type="text" name="answer" value="<%= answer%>" placeholder="Responda aqui"></input>
-   	<input type="submit" value="Comprobar"> </input>
+
+<form method="get" action="/check">
+<p>Pregunta: <%= question %> </p>
+<input type="text" name="answer" value="<%= answer%>" placeholder="Responda aqui"></input>
+<input type="submit" value="Comprobar"> </input>
    		
-   </form>
-  </body>
-</html>
